@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Climate Innovator | Can Human Ingenuity Save Our Planet?</title>
+    <style>
+        /* Google Fonts Import */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+        /* CSS Reset & Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #10b981;
+            --dark-green: #065f46;
+            --light-green: #d1fae5;
+            --primary-blue: #3b82f6;
+            --dark-blue: #1e40af;
+            --light-blue: #dbeafe;
+            --text-dark: #1f2937;
+            --text-medium: #4b5563;
+            --text-light: #6b7280;
+            --bg-cream: #fefce8;
+            --bg-white: #ffffff;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(to bottom, #f0fdf4, #ecfeff);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--dark-green);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-medium);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .hero-category {
+            display: inline-block;
+            background: var(--light-green);
+            color: var(--dark-green);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-subtitle {
+            font-size: 1.35rem;
+            color: var(--text-medium);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meta-icon {
+            font-size: 1.1rem;
+        }
+
+        /* Featured Image */
+        .featured-image {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .featured-image-wrapper {
+            width: 100%;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            background: linear-gradient(135deg, #059669 0%, #2563eb 100%);
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .featured-image-wrapper:hover {
+            transform: scale(1.02);
+        }
+
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23059669;stop-opacity:0.9"/><stop offset="100%" style="stop-color:%232563eb;stop-opacity:0.9"/></linearGradient></defs><rect width="1200" height="500" fill="url(%23grad)"/><circle cx="200" cy="100" r="80" fill="white" opacity="0.1"/><circle cx="900" cy="350" r="120" fill="white" opacity="0.08"/><circle cx="600" cy="200" r="60" fill="white" opacity="0.12"/><path d="M 0 400 Q 300 350 600 380 T 1200 400 L 1200 500 L 0 500 Z" fill="white" opacity="0.15"/><g opacity="0.6"><path d="M 100 450 L 120 420 L 140 450" stroke="white" stroke-width="3" fill="none"/><path d="M 300 430 L 320 400 L 340 430" stroke="white" stroke-width="3" fill="none"/><path d="M 500 440 L 520 410 L 540 440" stroke="white" stroke-width="3" fill="none"/></g><circle cx="150" cy="120" r="40" fill="%23fbbf24" opacity="0.7"/><line x1="150" y1="80" x2="150" y2="70" stroke="%23fbbf24" stroke-width="3" opacity="0.7"/><line x1="150" y1="160" x2="150" y2="170" stroke="%23fbbf24" stroke-width="3" opacity="0.7"/><line x1="110" y1="120" x2="100" y2="120" stroke="%23fbbf24" stroke-width="3" opacity="0.7"/><line x1="190" y1="120" x2="200" y2="120" stroke="%23fbbf24" stroke-width="3" opacity="0.7"/><g transform="translate(800, 100)"><rect x="0" y="30" width="15" height="40" fill="white" opacity="0.5"/><rect x="20" y="20" width="15" height="50" fill="white" opacity="0.5"/><rect x="40" y="10" width="15" height="60" fill="white" opacity="0.5"/><rect x="60" y="0" width="15" height="70" fill="white" opacity="0.5"/></g></svg>') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-text {
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .article-content {
+            background: white;
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Typography */
+        .article-content p {
+            font-size: 1.125rem;
+            line-height: 1.9;
+            color: var(--text-dark);
+            margin-bottom: 1.8rem;
+            text-align: justify;
+        }
+
+        .intro-text {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--text-medium);
+            border-left: 4px solid var(--primary-green);
+            padding-left: 2rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        /* Quote Block */
+        .quote-block {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--light-green) 100%);
+            border-radius: 15px;
+            padding: 3rem;
+            margin: 3rem 0;
+            position: relative;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .quote-block:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .quote-block::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 8rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-blue);
+            opacity: 0.2;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-author {
+            font-style: normal;
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .quote-author::before {
+            content: '—';
+            font-weight: 400;
+        }
+
+        /* Highlight Boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 5px solid #f59e0b;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2.5rem 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .highlight-box:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-green), var(--primary-blue));
+            margin: 3rem auto;
+            border-radius: 2px;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+
+        /* Conclusion Box */
+        .conclusion-box {
+            background: linear-gradient(135deg, #d1fae5 0%, #dbeafe 100%);
+            border: 3px solid var(--primary-green);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .conclusion-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--dark-green);
+            margin-bottom: 1.5rem;
+        }
+
+        .conclusion-box p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .conclusion-highlight {
+            color: var(--primary-green);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-blue));
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0 0;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-green);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-green);
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        /* Share Section */
+        .share-section {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 2px solid #e5e7eb;
+            text-align: center;
+        }
+
+        .share-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-medium);
+            margin-bottom: 1.5rem;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .share-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-5px) rotate(10deg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .share-twitter {
+            background: #1da1f2;
+            color: white;
+        }
+
+        .share-facebook {
+            background: #4267B2;
+            color: white;
+        }
+
+        .share-linkedin {
+            background: #0077b5;
+            color: white;
+        }
+
+        .share-email {
+            background: #ea4335;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-green);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 2;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-green);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Easter Egg - Hidden Climate Counter */
+        .climate-counter {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-xl);
+            z-index: 999;
+            min-width: 220px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.5s ease;
+        }
+
+        .climate-counter.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .counter-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .counter-value {
+            font-size: 1.8rem;
+            font-weight: 900;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .counter-close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+
+        .counter-close:hover {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .featured-image-wrapper {
+                height: 300px;
+            }
+
+            .image-text {
+                font-size: 1.8rem;
+            }
+
+            .article-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .article-content p {
+                font-size: 1.05rem;
+            }
+
+            .intro-text {
+                font-size: 1.15rem;
+                padding-left: 1.5rem;
+            }
+
+            .quote-block {
+                padding: 2rem 1.5rem;
+            }
+
+            .quote-block p {
+                font-size: 1.15rem;
+            }
+
+            .conclusion-box {
+                padding: 2rem;
+            }
+
+            .conclusion-box h2 {
+                font-size: 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .climate-counter {
+                bottom: 20px;
+                right: 20px;
+                min-width: 180px;
+                padding: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .article-content > * {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Scroll Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-green), var(--primary-blue));
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: fixed;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10000;
+        }
+
+        .tooltip.show {
+            opacity: 1;
+        }
+
+        /* Print Styles */
+        @media print {
+            /* Reset for print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                font-size: 11pt;
+                line-height: 1.5;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Hide interactive elements */
+            .progress-bar,
+            .tooltip,
+            .climate-counter,
+            .nav-links,
+            .share-section,
+            .cta-section,
+            .footer-section:not(:first-child) {
+                display: none !important;
+            }
+
+            /* Simplify navigation */
+            nav {
+                position: static;
+                background: white !important;
+                border-bottom: 2px solid #10b981;
+                page-break-after: avoid;
+            }
+
+            .logo {
+                animation: none !important;
+            }
+
+            .logo-icon {
+                animation: none !important;
+            }
+
+            /* Hero section */
+            .hero {
+                padding: 2rem 1rem;
+                page-break-after: avoid;
+            }
+
+            .hero h1 {
+                font-size: 24pt;
+                margin-bottom: 1rem;
+                page-break-after: avoid;
+            }
+
+            .hero-subtitle {
+                font-size: 12pt;
+                margin-bottom: 1rem;
+            }
+
+            .hero-category {
+                animation: none !important;
+                background: #d1fae5 !important;
+                margin-bottom: 1rem;
+            }
+
+            .hero-meta {
+                font-size: 9pt;
+                gap: 1rem;
+            }
+
+            /* Featured image - simplified */
+            .featured-image {
+                margin: 1rem 0;
+                page-break-inside: avoid;
+            }
+
+            .featured-image-wrapper {
+                height: 200px;
+                page-break-inside: avoid;
+            }
+
+            .image-text {
+                font-size: 18pt;
+            }
+
+            /* Article content */
+            .article-container {
+                margin: 1rem 0;
+                padding: 0;
+            }
+
+            .article-content {
+                padding: 1rem;
+                box-shadow: none !important;
+                background: white !important;
+            }
+
+            .article-content > * {
+                animation: none !important;
+            }
+
+            .article-content p {
+                font-size: 11pt;
+                line-height: 1.6;
+                margin-bottom: 0.8rem;
+                text-align: justify;
+                orphans: 3;
+                widows: 3;
+            }
+
+            .intro-text {
+                font-size: 12pt;
+                padding-left: 1rem;
+                margin: 1rem 0;
+                page-break-inside: avoid;
+            }
+
+            /* Quote block */
+            .quote-block {
+                background: #dbeafe !important;
+                padding: 1.5rem;
+                margin: 1rem 0;
+                page-break-inside: avoid;
+                border: 2px solid #3b82f6;
+            }
+
+            .quote-block::before {
+                display: none;
+            }
+
+            .quote-block p {
+                font-size: 11pt;
+                margin-bottom: 0.5rem;
+            }
+
+            .quote-author {
+                font-size: 10pt;
+            }
+
+            /* Stats grid */
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+                margin: 1rem 0;
+                page-break-inside: avoid;
+            }
+
+            .stat-card {
+                background: linear-gradient(135deg, #10b981, #065f46) !important;
+                padding: 1rem;
+                border-radius: 8px;
+                page-break-inside: avoid;
+            }
+
+            .stat-number {
+                font-size: 18pt;
+            }
+
+            .stat-label {
+                font-size: 9pt;
+            }
+
+            /* Highlight box */
+            .highlight-box {
+                background: #fef3c7 !important;
+                padding: 1rem;
+                margin: 1rem 0;
+                page-break-inside: avoid;
+                border-left: 4px solid #f59e0b;
+            }
+
+            .highlight-box p {
+                font-size: 10pt;
+            }
+
+            /* Section divider */
+            .section-divider {
+                margin: 1rem auto;
+                page-break-after: avoid;
+            }
+
+            /* Conclusion box */
+            .conclusion-box {
+                background: linear-gradient(135deg, #d1fae5, #dbeafe) !important;
+                border: 3px solid #10b981;
+                padding: 1.5rem;
+                margin: 1rem 0;
+                page-break-inside: avoid;
+            }
+
+            .conclusion-box h2 {
+                font-size: 16pt;
+                margin-bottom: 1rem;
+                page-break-after: avoid;
+            }
+
+            .conclusion-box p {
+                font-size: 11pt;
+            }
+
+            /* Footer */
+            footer {
+                background: #1f2937 !important;
+                color: white !important;
+                padding: 1rem;
+                margin-top: 2rem;
+                page-break-before: avoid;
+            }
+
+            .footer-content {
+                display: block;
+            }
+
+            .footer-section:first-child {
+                text-align: center;
+            }
+
+            .footer-section h3 {
+                font-size: 12pt;
+                margin-bottom: 0.5rem;
+            }
+
+            .footer-section p {
+                font-size: 9pt;
+                line-height: 1.4;
+            }
+
+            .footer-bottom {
+                margin-top: 1rem;
+                padding-top: 1rem;
+                font-size: 8pt;
+            }
+
+            /* Page breaks */
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+
+            .stats-grid,
+            .quote-block,
+            .highlight-box,
+            .conclusion-box,
+            .featured-image-wrapper {
+                page-break-inside: avoid;
+            }
+
+            /* Ensure links are visible */
+            a[href^="http"]::after {
+                content: " (" attr(href) ")";
+                font-size: 8pt;
+                color: #666;
+            }
+
+            /* Hide href for anchor links */
+            a[href^="#"]::after {
+                content: "";
+            }
+
+            /* Page margins */
+            @page {
+                margin: 2cm 1.5cm;
+                size: A4;
+            }
+
+            /* Print-specific title */
+            .hero::before {
+                content: "The Climate Innovator Blog";
+                display: block;
+                font-size: 10pt;
+                color: #065f46;
+                margin-bottom: 0.5rem;
+                font-weight: normal;
+            }
+        }
+
+        /* Print button */
+        .print-button {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .print-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* QR Code Section */
+        .qr-section {
+            position: fixed;
+            top: 50%;
+            right: -350px;
+            transform: translateY(-50%);
+            background: white;
+            padding: 2rem;
+            border-radius: 20px 0 0 20px;
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+            z-index: 998;
+            transition: right 0.4s ease;
+            max-width: 320px;
+        }
+
+        .qr-section.visible {
+            right: 0;
+        }
+
+        .qr-toggle {
+            position: absolute;
+            left: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #10b981, #065f46);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px 0 0 10px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            border: none;
+            box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .qr-toggle:hover {
+            transform: translateY(-50%) translateX(-5px);
+        }
+
+        .qr-content h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-green);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .qr-content p {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .qr-placeholder {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, #f0fdf4, #ecfeff);
+            border: 3px dashed var(--primary-green);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem auto;
+            font-size: 3rem;
+        }
+
+        .qr-instructions {
+            background: #f0fdf4;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            border-left: 3px solid var(--primary-green);
+        }
+
+        .qr-instructions strong {
+            color: var(--dark-green);
+        }
+
+        .qr-instructions code {
+            background: rgba(16, 185, 129, 0.1);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 0.85em;
+        }
+
+        @media print {
+            .print-button,
+            .qr-section {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .qr-section {
+                display: none;
+            }
+        }
+
+        /* Confetti animation for celebrations */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: var(--primary-green);
+            position: absolute;
+            animation: confetti-fall 3s linear forwards;
+            z-index: 10000;
+        }
+
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Reading time badge */
+        .reading-badge {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: var(--shadow-md);
+            font-size: 0.9rem;
+            color: var(--text-medium);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .reading-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .reading-progress {
+            width: 80px;
+            height: 4px;
+            background: #e5e7eb;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .reading-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-green), var(--primary-blue));
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        @media print {
+            .reading-badge {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .reading-badge {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Tooltip -->
+    <div class="tooltip" id="tooltip"></div>
+
+    <!-- Climate Counter (Easter Egg) -->
+    <div class="climate-counter" id="climateCounter">
+        <div class="counter-close" onclick="hideCounter()">✕</div>
+        <div class="counter-title">CO₂ Emissions Today</div>
+        <div class="counter-value" id="co2Counter">0</div>
+        <div style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.8;">million tons</div>
+    </div>
+
+    <!-- Print Button -->
+    <button class="print-button" onclick="window.print()">🖨️ Print Article</button>
+
+    <!-- Reading Progress Badge -->
+    <div class="reading-badge">
+        <span id="readingTime">⏱️ 5 min</span>
+        <div class="reading-progress">
+            <div class="reading-progress-bar" id="readingProgressBar"></div>
+        </div>
+    </div>
+
+    <!-- QR Code Section (Side Panel) -->
+    <div class="qr-section" id="qrSection">
+        <button class="qr-toggle" onclick="toggleQR()">📱</button>
+        <div class="qr-content">
+            <h3>Scan for Mobile</h3>
+            <p>Share this blog with your teacher by scanning the QR code!</p>
+            <div class="qr-placeholder">
+                <span>📱</span>
+            </div>
+            <div class="qr-instructions">
+                <strong>💡 How to create your QR code:</strong><br>
+                1. Host your site (GitHub Pages, Netlify, etc.)<br>
+                2. Open <code>generate-qr.html</code><br>
+                3. Generate and download your QR code<br>
+                4. Add it here or print it separately!
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" onclick="scrollToTop()">
+                <span class="logo-icon">🌍</span>
+                <span>The Climate Innovator</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#article">Article</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-category">Climate Change • Innovation • Hope</div>
+        <h1>Can We Be Optimistic That Human Ingenuity Will Help Curb Climate Change Before It Is Too Late?</h1>
+        <p class="hero-subtitle">A critical look at the race between innovation and catastrophe, and why our generation holds the key to humanity's future.</p>
+        <div class="hero-meta">
+            <div class="meta-item">
+                <span class="meta-icon">📅</span>
+                <span>January 2026</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-icon">⏱️</span>
+                <span>5 min read</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-icon">🏫</span>
+                <span>Terminale Exhibition Project</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Image -->
+    <section class="featured-image">
+        <div class="featured-image-wrapper" onclick="showClimateCounter()">
+            <div class="image-overlay">
+                <div class="image-text">
+                    Innovation vs. Catastrophe:<br>The Race of Our Generation
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="article-container" id="article">
+        <div class="article-content">
+
+            <p class="intro-text">The planet is warming. Ice sheets are collapsing. Wildfires rage across continents while floods devastate coastal cities. We stand at a precipice, looking down at a future that could either be our greatest triumph or our ultimate failure.</p>
+
+            <p>There's no denying the urgency. Scientists have made it abundantly clear: we're running out of time. The window for preventing catastrophic climate change is closing rapidly, and every year of inaction pushes us closer to irreversible tipping points. Global temperatures continue to rise, extreme weather events become more frequent, and ecosystems that have thrived for millennia are collapsing before our eyes.</p>
+
+            <p>The scale of this crisis demands honesty. We're not just facing an environmental inconvenience—we're confronting a potential existential threat to human civilization as we know it. Future generations will inherit whatever world we leave them, and right now, that inheritance looks increasingly bleak. The weight of responsibility sits heavily on our shoulders.</p>
+
+            <div class="stats-grid" id="solutions">
+                <div class="stat-card" data-tooltip="Based on IPCC recommendations to avoid catastrophic warming">
+                    <div class="stat-number">1.5°C</div>
+                    <div class="stat-label">Critical warming threshold</div>
+                </div>
+                <div class="stat-card" data-tooltip="UN deadline for major emission reductions">
+                    <div class="stat-number">2030</div>
+                    <div class="stat-label">Deadline for major action</div>
+                </div>
+                <div class="stat-card" data-tooltip="Required global CO₂ reduction to meet climate targets">
+                    <div class="stat-number">50%</div>
+                    <div class="stat-label">Required emission cuts by 2030</div>
+                </div>
+            </div>
+
+            <p>Yet here's where the story takes a turn. Elon Musk, entrepreneur and climate advocate, captured the gravity of our situation perfectly when he observed our predicament:</p>
+
+            <div class="quote-block">
+                <p>"We're running the most dangerous experiment in history right now, which is to see how much carbon dioxide the atmosphere can handle before there is an environmental catastrophe."</p>
+                <div class="quote-author">Elon Musk</div>
+            </div>
+
+            <p>This "experiment" isn't one we consciously chose to run, but we're running it nonetheless. Every day, we pump millions of tons of CO₂ into the atmosphere, testing the limits of our planet's resilience. But acknowledging this reality doesn't mean accepting defeat—it means understanding the stakes and fighting back with everything we have.</p>
+
+            <div class="section-divider"></div>
+
+            <p>And fight back we are. Human ingenuity, the same force that created the industrial revolution and put us in this mess, is now our greatest weapon in the battle against climate change. The transformation happening right now is nothing short of extraordinary.</p>
+
+            <p>Renewable energy has shifted from a utopian dream to economic reality. Solar and wind power are now cheaper than fossil fuels in most markets. Electric vehicles are flooding streets worldwide, with major automakers racing to phase out combustion engines. Scientists are developing revolutionary carbon capture technologies, artificial meat alternatives, and sustainable materials that could replace polluting industries.</p>
+
+            <div class="highlight-box" data-tooltip="Click to learn more fun climate facts!">
+                <p><strong>💡 Did you know?</strong> The cost of solar energy has dropped by 90% in the last decade, making it the cheapest source of electricity in history. Innovation is accelerating faster than anyone predicted.</p>
+            </div>
+
+            <p>Beyond technology, we're witnessing a global awakening. Young activists are demanding action, businesses are pivoting toward sustainability, and governments are finally implementing serious climate policies. The momentum is building, and with each passing year, our collective response becomes more sophisticated and more urgent.</p>
+
+            <p>The question isn't whether we have the technology to solve climate change—we do. The real question is whether we can deploy these solutions fast enough and at sufficient scale. Can we transform our energy systems, our transportation networks, our agricultural practices, and our consumption patterns before we cross those dangerous tipping points? This is the race we're running, and the finish line is rapidly approaching.</p>
+
+            <div class="conclusion-box">
+                <h2>The Power Is in Our Hands</h2>
+                <p><span class="conclusion-highlight">So yes, we can be cautiously optimistic.</span> Human ingenuity has overcome seemingly impossible challenges before, and it's rising to meet this one too. But optimism without action is merely wishful thinking—a luxury we cannot afford.</p>
+                <p>Every decision we make matters. From the energy we consume to the products we buy, from the leaders we elect to the conversations we have, we're all shaping the outcome of this experiment. The technology exists, the solutions are proven, and the path forward is clear. What we need now is the collective will to take it.</p>
+                <p><strong>This isn't just about future generations anymore. This is about us, here and now. The time to act is not tomorrow—it's today.</strong></p>
+            </div>
+
+            <div class="cta-section">
+                <h3>Ready to Make a Difference?</h3>
+                <p>The climate crisis requires action from all of us. Start today, no matter how small the step.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="showClimateAction()">Learn About Climate Solutions</button>
+                    <button class="btn btn-secondary" onclick="calculateFootprint()">Calculate Your Carbon Footprint</button>
+                </div>
+            </div>
+
+            <!-- Share Section -->
+            <div class="share-section">
+                <div class="share-title">Share this article and spread awareness</div>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn share-twitter" title="Share on Twitter" onclick="shareArticle('twitter'); return false;">🐦</a>
+                    <a href="#" class="share-btn share-facebook" title="Share on Facebook" onclick="shareArticle('facebook'); return false;">📘</a>
+                    <a href="#" class="share-btn share-linkedin" title="Share on LinkedIn" onclick="shareArticle('linkedin'); return false;">💼</a>
+                    <a href="#" class="share-btn share-email" title="Share via Email" onclick="shareArticle('email'); return false;">✉️</a>
+                </div>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>The Climate Innovator</h3>
+                <p>A student-led blog dedicated to exploring climate change, innovation, and the power of human ingenuity to shape a sustainable future.</p>
+                <p style="margin-top: 1rem;">🌍 Created for Climate Awareness Exhibition<br>Terminale English Project 2026</p>
+            </div>
+            <div class="footer-section">
+                <h3>Explore Topics</h3>
+                <a href="#" onclick="showMessage('Climate Science'); return false;">Climate Science</a>
+                <a href="#" onclick="showMessage('Renewable Energy'); return false;">Renewable Energy</a>
+                <a href="#" onclick="showMessage('Sustainable Innovation'); return false;">Sustainable Innovation</a>
+                <a href="#" onclick="showMessage('Climate Policy'); return false;">Climate Policy</a>
+                <a href="#" onclick="showMessage('Youth Activism'); return false;">Youth Activism</a>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <a href="https://www.ipcc.ch/" target="_blank">IPCC Reports</a>
+                <a href="https://climateactiontracker.org/" target="_blank">Climate Action Tracker</a>
+                <a href="https://climate.nasa.gov/" target="_blank">NASA Climate</a>
+                <a href="https://www.drawdown.org/" target="_blank">Project Drawdown</a>
+                <a href="https://www.climaterealityproject.org/" target="_blank">Climate Reality Project</a>
+            </div>
+            <div class="footer-section">
+                <h3>Get Involved</h3>
+                <a href="#" onclick="showMessage('Community'); return false;">Join Our Community</a>
+                <a href="#" onclick="showMessage('Story'); return false;">Submit Your Story</a>
+                <a href="#" onclick="showMessage('Resources'); return false;">Educational Resources</a>
+                <a href="#" onclick="showMessage('Contact'); return false;">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Climate Innovator. Created by Terminale students for the Climate Awareness Exhibition. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;">Together, we can build a sustainable future. 🌱</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll progress bar and reading progress
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+
+            // Update progress bar
+            document.getElementById('progressBar').style.width = scrollPercentage + '%';
+
+            // Update reading progress
+            const readingProgressBar = document.getElementById('readingProgressBar');
+            if (readingProgressBar) {
+                readingProgressBar.style.width = scrollPercentage + '%';
+            }
+
+            // Update reading time estimate
+            const readingTime = document.getElementById('readingTime');
+            if (readingTime && scrollPercentage > 0) {
+                const remainingTime = Math.ceil(5 * (1 - scrollPercentage / 100));
+                readingTime.textContent = `⏱️ ${remainingTime} min left`;
+                if (scrollPercentage >= 99) {
+                    readingTime.textContent = '✅ Completed!';
+                    // Celebrate completion
+                    if (!window.celebrationShown) {
+                        celebrateCompletion();
+                        window.celebrationShown = true;
+                    }
+                }
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Climate Counter (Easter Egg)
+        let counterVisible = false;
+        let co2Value = 100;
+
+        function showClimateCounter() {
+            const counter = document.getElementById('climateCounter');
+            if (!counterVisible) {
+                counter.classList.add('visible');
+                counterVisible = true;
+                startCO2Counter();
+            }
+        }
+
+        function hideCounter() {
+            const counter = document.getElementById('climateCounter');
+            counter.classList.remove('visible');
+            counterVisible = false;
+        }
+
+        function startCO2Counter() {
+            const counterElement = document.getElementById('co2Counter');
+            setInterval(() => {
+                co2Value += Math.random() * 2;
+                counterElement.textContent = co2Value.toFixed(1);
+            }, 1000);
+        }
+
+        // Interactive tooltips
+        document.querySelectorAll('[data-tooltip]').forEach(element => {
+            element.addEventListener('mouseenter', function(e) {
+                const tooltip = document.getElementById('tooltip');
+                tooltip.textContent = this.getAttribute('data-tooltip');
+                tooltip.classList.add('show');
+            });
+
+            element.addEventListener('mousemove', function(e) {
+                const tooltip = document.getElementById('tooltip');
+                tooltip.style.left = e.pageX + 10 + 'px';
+                tooltip.style.top = e.pageY + 10 + 'px';
+            });
+
+            element.addEventListener('mouseleave', function() {
+                const tooltip = document.getElementById('tooltip');
+                tooltip.classList.remove('show');
+            });
+        });
+
+        // Share functionality
+        function shareArticle(platform) {
+            const messages = {
+                twitter: '🐦 Thanks for sharing on Twitter! Together we can spread climate awareness!',
+                facebook: '📘 Thanks for sharing on Facebook! Let\'s inspire more people to take action!',
+                linkedin: '💼 Thanks for sharing on LinkedIn! Professional networks need climate voices!',
+                email: '✉️ Thanks for sharing via email! Personal connections matter most!'
+            };
+
+            showMessage('Share', messages[platform]);
+        }
+
+        // Climate action popup
+        function showClimateAction() {
+            const actions = [
+                '🌱 Reduce energy consumption',
+                '♻️ Recycle and reduce waste',
+                '🚴 Use sustainable transport',
+                '🌿 Support renewable energy',
+                '📢 Raise awareness'
+            ];
+
+            const message = 'Top Climate Actions:\n\n' + actions.join('\n');
+            alert(message);
+        }
+
+        // Carbon footprint calculator
+        function calculateFootprint() {
+            const questions = [
+                'Do you use public transport? (yes/no)',
+                'Do you eat meat daily? (yes/no)',
+                'Do you recycle regularly? (yes/no)'
+            ];
+
+            let score = 50;
+
+            questions.forEach(q => {
+                const answer = prompt(q);
+                if (answer && answer.toLowerCase() === 'yes') {
+                    if (q.includes('transport') || q.includes('recycle')) {
+                        score -= 10;
+                    } else {
+                        score += 5;
+                    }
+                }
+            });
+
+            const result = score < 30 ? '🌟 Excellent!' : score < 50 ? '👍 Good!' : '💪 Room for improvement!';
+            alert(`Your estimated carbon footprint score: ${score}/100\n${result}\n\nEvery small change makes a difference!`);
+        }
+
+        // Generic message display
+        function showMessage(type, customMsg) {
+            const messages = {
+                'Climate Science': '🔬 Climate Science explores how our planet\'s systems are changing!',
+                'Renewable Energy': '⚡ Renewable energy is the future - solar, wind, and hydro power!',
+                'Sustainable Innovation': '💡 Innovation drives sustainability - from carbon capture to green tech!',
+                'Climate Policy': '📜 Climate policies shape our collective response to the crisis!',
+                'Youth Activism': '✊ Young voices are leading the climate movement worldwide!',
+                'Community': '🤝 Join our community to connect with climate advocates!',
+                'Story': '📝 Share your climate story and inspire others!',
+                'Resources': '📚 Access educational materials about climate science and solutions!',
+                'Contact': '📧 Contact us: climate.innovator@example.com'
+            };
+
+            alert(customMsg || messages[type] || 'Thanks for your interest in climate action! 🌍');
+        }
+
+        // Fun stat card click effect
+        document.querySelectorAll('.stat-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(1.1) rotate(0deg)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 300);
+            });
+        });
+
+        // Highlight box click
+        document.querySelector('.highlight-box').addEventListener('click', function() {
+            const facts = [
+                '🌊 Ocean levels are rising at 3.3mm per year',
+                '🔥 2023 was the hottest year on record',
+                '❄️ Arctic ice is melting 13% per decade',
+                '🌳 Forests absorb 2.6 billion tons of CO₂ yearly',
+                '⚡ Solar panels have 25+ year lifespans'
+            ];
+
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            alert('Climate Fact:\n\n' + randomFact);
+        });
+
+        // Toggle QR section
+        function toggleQR() {
+            const qrSection = document.getElementById('qrSection');
+            qrSection.classList.toggle('visible');
+        }
+
+        // Celebrate reading completion
+        function celebrateCompletion() {
+            // Create confetti
+            const colors = ['#10b981', '#3b82f6', '#fbbf24', '#ec4899'];
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.top = '-10px';
+                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                    document.body.appendChild(confetti);
+
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 3000);
+                }, i * 30);
+            }
+
+            // Show completion message
+            setTimeout(() => {
+                const message = '🎉 Congratulations! You\'ve read the complete article on climate change.\n\n' +
+                               '💚 Together, we can make a difference!\n\n' +
+                               'Share this article to raise more awareness.';
+                alert(message);
+            }, 1000);
+        }
+
+        // Easter egg: Konami code
+        let konamiCode = [];
+        const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.key);
+            if (konamiCode.length > konamiSequence.length) {
+                konamiCode.shift();
+            }
+
+            if (konamiCode.join(',') === konamiSequence.join(',')) {
+                activateEasterEgg();
+                konamiCode = [];
+            }
+        });
+
+        function activateEasterEgg() {
+            alert('🎮 Easter Egg Unlocked!\n\n🌍 Super Climate Hero Mode Activated!\n\nYou\'re now part of the climate solution team. Every action counts! 💪🌱');
+
+            // Change theme colors temporarily
+            document.body.style.animation = 'rainbow 5s linear';
+
+            // Add rainbow animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes rainbow {
+                    0% { filter: hue-rotate(0deg); }
+                    100% { filter: hue-rotate(360deg); }
+                }
+            `;
+            document.head.appendChild(style);
+
+            setTimeout(() => {
+                document.body.style.animation = '';
+            }, 5000);
+        }
+
+        // Lazy loading for featured image
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'scale(1)';
+                    }
+                });
+            });
+
+            const featuredImage = document.querySelector('.featured-image-wrapper');
+            if (featuredImage) {
+                featuredImage.style.opacity = '0';
+                featuredImage.style.transform = 'scale(0.95)';
+                featuredImage.style.transition = 'all 0.8s ease-out';
+                observer.observe(featuredImage);
+            }
+        });
+    </script>
+</body>
+</html>
